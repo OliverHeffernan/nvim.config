@@ -76,6 +76,14 @@ require("lazy").setup({
 			require("comments")
 		end,
 	},
+	{
+		'nvim-lualine/lualine.nvim',
+		dependencies = { 'nvim-tree/nvim-web-devicons' }
+	},
+	-- better syntax highlighting
+	{
+		"nvim-treesitter/nvim-treesitter"
+	}
 })
 
 -- mappings for comments.nvim
@@ -87,7 +95,16 @@ require('telescope').setup()
 require('oil').setup()
 require('nvim-web-devicons').setup()
 require('gitsigns').setup()
+require('lualine').setup()
 
 require('languageServerSetups')
 require('telescopeMappings')
 require('cmpMappings')
+
+require'nvim-treesitter.configs'.setup {
+  --ensure_installed = "maintained", -- or specify specific languages
+  highlight = {
+    enable = true,              -- false will disable the whole extension
+    additional_vim_regex_highlighting = false, -- set to true if you still need Vim regex highlighting
+  },
+}

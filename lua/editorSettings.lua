@@ -2,6 +2,7 @@
 vim.opt.clipboard = 'unnamedplus'
 
 vim.g.mapleader = " "
+
 -- Enable line numbering
 vim.o.number = true
 vim.o.relativenumber = true
