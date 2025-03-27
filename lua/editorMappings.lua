@@ -19,5 +19,9 @@ vim.cmd('nmap ,P "0p')
 vim.cmd('nnoremap <leader>tn :tabnew<CR>')
 vim.cmd('nnoremap <leader>tc :tabclose<CR>')
 
--- mapping control i to escape in insert mode
-vim.cmd('inoremap <C-i> <Esc>')
+-- map jj to exit insert mode
+vim.cmd('inoremap jj <Esc>')
+-- map ww to exit insert mode and write the current file
+vim.cmd('inoremap ww <Esc>:w<CR>')
+-- map yy to exit insert mode and yank the current line
+vim.cmd('inoremap yy <Esc>yy')

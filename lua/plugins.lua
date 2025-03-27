@@ -17,7 +17,7 @@ require("lazy").setup({
 	{
 		'nvim-telescope/telescope.nvim',
 		tag = '0.1.8',
-		dependencies = { 'nvim-lua/plenary.nvim' }
+		--dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 	-- file manager
 	{
@@ -62,12 +62,37 @@ require("lazy").setup({
 			"hrsh7th/cmp-path",
 			"L3MON4D3/LuaSnip",
 			"dcampos/cmp-emmet-vim"
-		}
+		},
+		opts = function()
+			local cmp = require("cmp")
+			return {
+				window = {
+					completion = cmp.config.window.bordered(), -- Keep borders
+					documentation = false,
+				},
+				completion = {
+					keyword_length = 1, -- Adjust how soon completion triggers
+					completeopt = "menu,menuone,noinsert",
+				},
+				performance = {
+					max_view_entries = 10, -- **This actually limits visible items**
+				},
+				sources = cmp.config.sources({
+					{ name = "nvim_lsp", max_item_count = 10 }, -- **Limit LSP suggestions**
+					{ name = "buffer", max_item_count = 5 },  -- Example: Limit buffer suggestions
+					{ name = "path", max_item_count = 5 },
+				}),
+				mapping = cmp.mapping.preset.insert({
+					["<C-Space>"] = cmp.mapping.complete(),
+					["<CR>"] = cmp.mapping.confirm({ select = true }),
+				}),
+			}
+		end,
 	},
 	-- error stuff and other tools for typescript
 	{
 		"pmizio/typescript-tools.nvim",
-		dependencies = { "nvim-lu/plenary.nvim" }
+		--dependencies = { "nvim-lu/plenary.nvim" }
 	},
 	-- basic comments plugin made by me
 	{
@@ -83,7 +108,19 @@ require("lazy").setup({
 	-- better syntax highlighting
 	{
 		"nvim-treesitter/nvim-treesitter"
-	}
+	},
+	{
+		"dense-analysis/ale"
+	},
+	-- colorschemes
+	{ "EdenEast/nightfox.nvim" },
+
+	{
+		'mfussenegger/nvim-jdtls',
+		ft = 'java',
+
+	},
+	{ 'mfussenegger/nvim-dap' }
 })
 
 -- mappings for comments.nvim
@@ -102,9 +139,18 @@ require('telescopeMappings')
 require('cmpMappings')
 
 require'nvim-treesitter.configs'.setup {
-  --ensure_installed = "maintained", -- or specify specific languages
-  highlight = {
-    enable = true,              -- false will disable the whole extension
-    additional_vim_regex_highlighting = false, -- set to true if you still need Vim regex highlighting
-  },
+	--ensure_installed = "maintained", -- or specify specific languages
+	highlight = {
+		enable = true,
+		additional_vim_regex_highlighting = false,
+	},
+	indent = { enable = true },
+	ensure_installed = {
+		'java',
+		'lua',
+		'cpp'
+	}
 }
+
+-- ale stuff
+require('aleConfig');

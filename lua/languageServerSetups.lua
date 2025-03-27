@@ -40,3 +40,4 @@ require'lspconfig'.html.setup({
 	}
 })
 
+require'lspconfig'.clangd.setup{}
