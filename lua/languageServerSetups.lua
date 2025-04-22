@@ -40,4 +40,51 @@ require'lspconfig'.html.setup({
 	}
 })
 
+require'lspconfig'.jdtls.setup {
+	cmd = {
+		'java',
+		'-Declipse.application=org.eclipse.jdt.ls.core.id1',
+		'-Dosgi.bundles.defaultStartLevel=4',
+		'-Declipse.product=org.eclipse.jdt.ls.core.product',
+		'-Dlog.protocol=true',
+		'-Dlog.level=ALL',
+		'-Xms1g',
+		'--add-modules=ALL-SYSTEM',
+		'--add-opens', 'java.base/java.util=ALL-UNNAMED',
+		'--add-opens', 'java.base/java.lang=ALL-UNNAMED',
+		'-jar', '/path/to/jdtls/plugins/org.eclipse.equinox.launcher_*.jar', -- Adjust path
+		'-configuration', '/path/to/jdtls/config_linux', -- Adjust for your OS (config_linux, config_mac, etc.)
+		'-data', vim.fn.stdpath('cache') .. '/jdtls-workspace'
+	},
+	root_dir = vim.fs.dirname(vim.fs.find({ '.git', 'src' }, { upward = true })[1]) or vim.fn.getcwd(),
+	settings = {
+		java = {
+			project = {
+				referencedLibraries = {
+					'lib/mylibrary.jar' -- Path to your .jar file relative to project root
+				}
+			}
+		}
+	},
+	init_options = {
+		bundles = {}
+	}
+}
+
+require'lspconfig'.rust_analyzer.setup {
+	settings = {
+		['rust_analyzer'] = {
+			checkOnSave = {
+				command = "clippy",
+			},
+			procMacro = {
+				enable = true
+			},
+			cargo = {
+				allFeatures = true
+			}
+		},
+	}
+}
+
 require'lspconfig'.clangd.setup{}

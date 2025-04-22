@@ -67,7 +67,7 @@ require("lazy").setup({
 			local cmp = require("cmp")
 			return {
 				window = {
-					completion = cmp.config.window.bordered(), -- Keep borders
+					--completion = cmp.config.window.bordered(), -- Keep borders
 					documentation = false,
 				},
 				completion = {
@@ -84,7 +84,7 @@ require("lazy").setup({
 				}),
 				mapping = cmp.mapping.preset.insert({
 					["<C-Space>"] = cmp.mapping.complete(),
-					["<CR>"] = cmp.mapping.confirm({ select = true }),
+					--["<CR>"] = cmp.mapping.confirm({ select = true }),
 				}),
 			}
 		end,
@@ -148,7 +148,8 @@ require'nvim-treesitter.configs'.setup {
 	ensure_installed = {
 		'java',
 		'lua',
-		'cpp'
+		'cpp',
+		'rust'
 	}
 }
 
