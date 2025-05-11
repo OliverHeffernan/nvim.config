@@ -26,12 +26,13 @@ vim.keymap.set('n', '<leader>fo', ':Oil<CR>', {
 	silent = true
 })
 
+-- removed this remapping so that I can use ; command for repeating f commands.
 -- remapping ; to : in normal mode
-vim.keymap.set('n', ';', ':', {
-	desc = "Easier to use ; instead of : for commands.",
-	noremap = true,
-	silent = true
-})
+--vim.keymap.set('n', ';', ':', {
+	--desc = "Easier to use ; instead of : for commands.",
+	--noremap = true,
+	--silent = true
+--})
 
 -- pasting last yank, not the last deletion
 vim.keymap.set('n', ',p', '"0p', {
