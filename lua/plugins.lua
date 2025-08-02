@@ -120,7 +120,12 @@ require("lazy").setup({
 		ft = 'java',
 
 	},
-	{ 'mfussenegger/nvim-dap' }
+	{ 'mfussenegger/nvim-dap' },
+	{ 
+		"lukas-reineke/indent-blankline.nvim",
+		main = "ibl",
+		opts = {}
+	}
 })
 
 -- mappings for comments.nvim
@@ -149,9 +154,23 @@ require'nvim-treesitter.configs'.setup {
 		'java',
 		'lua',
 		'cpp',
-		'rust'
+		'rust',
+		'python'
 	}
 }
 
 -- ale stuff
 require('aleConfig');
+
+-- ib1 stuff adding lines for spaces, e.g. in python, spaces are enforced.
+require("ibl").setup({
+	indent = {
+		char = "│",
+	},
+	whitespace = {
+		remove_blankline_trail = false,
+	},
+	scope = {
+		enabled = false,
+	},
+})

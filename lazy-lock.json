@@ -8,6 +8,7 @@
   "comments.nvim": { "branch": "main", "commit": "09fd0639e5dbc34ebf078b63c18397367543b5f6" },
   "emmet-vim": { "branch": "master", "commit": "6c511a8d7d2863066f32e25543e2bb99d505172c" },
   "gitsigns.nvim": { "branch": "main", "commit": "7010000889bfb6c26065e0b0f7f1e6aa9163edd9" },
+  "indent-blankline.nvim": { "branch": "master", "commit": "005b56001b2cb30bfa61b7986bc50657816ba4ba" },
   "lazy.nvim": { "branch": "main", "commit": "6c3bda4aca61a13a9c63f1c1d1b16b9d3be90d7a" },
   "lualine.nvim": { "branch": "master", "commit": "9fef261b53fbe3a2ef01ee9667f6fde064b1ed10" },
   "mini.icons": { "branch": "main", "commit": "ec61af6e606fc89ee3b1d8f2f20166a3ca917a36" },

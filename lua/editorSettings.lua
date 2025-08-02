@@ -27,3 +27,6 @@ vim.cmd('set cursorline')
 
 vim.g.vim_vue_plugin_load_full_syntax = 1
 vim.cmd [[ autocmd FileType vue setlocal indentexpr= ]]
+
+vim.cmd[[ set noexpandtab ]]
+
