@@ -26,14 +26,6 @@ vim.keymap.set('n', '<leader>fo', ':Oil<CR>', {
 	silent = true
 })
 
--- removed this remapping so that I can use ; command for repeating f commands.
--- remapping ; to : in normal mode
---vim.keymap.set('n', ';', ':', {
-	--desc = "Easier to use ; instead of : for commands.",
-	--noremap = true,
-	--silent = true
---})
-
 -- pasting last yank, not the last deletion
 vim.keymap.set('n', ',p', '"0p', {
 	desc = "Pasting the last yank after the cursor, not including deletions."
@@ -48,13 +40,19 @@ vim.keymap.set('n', '<C-T>l', ':tabnext<CR>', {
 	noremap = true,
 	silent = true
 })
-vim.keymap.set('n', '<C-T>h', ':tabnext<CR>', {
+vim.keymap.set('n', '<C-T>h', ':tabprevious<CR>', {
 	desc = "Switch to previous tab.",
 	noremap = true,
 	silent = true
 })
 vim.keymap.set('n', '<C-T>t', ':tabnew<CR>', {
-	desc = "Close a tab",
+	desc = "New tab",
+	noremap = true,
+	silent = true
+})
+
+vim.keymap.set('n', '<C-T>x', ':tabclose<CR>', {
+	desc = "Close tab",
 	noremap = true,
 	silent = true
 })
@@ -95,3 +93,4 @@ vim.keymap.set('n', '<leader>d',
 		silent = true
 	}
 )
+

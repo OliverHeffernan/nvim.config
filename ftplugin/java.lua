@@ -1,27 +1,27 @@
-local jdtls = require("jdtls")
-
-local root_markers = { ".git", "mvnw", "gradlew", ".project" }
-local root_dir = require("jdtls.setup").find_root(root_markers) or vim.fin.getcwd()
-
-local homebrew_jdtls = "/opt/homebrew/Cellar/jdtls/1.48.0/bin/jdtls"
-
-local config = {
-	cmd = { 
-		homebrew_jdtls,
-		"-data",
-		vim.fn.stdpath("cache") .. "/jdtls-workspace/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
-	},
-	root_dir = root_dir,
-	capabilities = require("cmp_nvim_lsp").default_capabilities(),
-	settings = {
-		java = {
-			project = {
-				referencedLibraries = {
-					"lib/**/*.jar"
-				}
-			}
-		}
-	},
-}
-
-jdtls.start_or_attach(config)
+--local jdtls = require("jdtls")
+--
+--local root_markers = { ".git", "mvnw", "gradlew", ".project" }
+--local root_dir = require("jdtls.setup").find_root(root_markers) or vim.fin.getcwd()
+--
+--local homebrew_jdtls = "/opt/homebrew/Cellar/jdtls/1.48.0/bin/jdtls"
+--
+--local config = {
+	--cmd = { 
+		--homebrew_jdtls,
+		--"-data",
+		--vim.fn.stdpath("cache") .. "/jdtls-workspace/" .. vim.fn.fnamemodify(root_dir, ":p:h:t")
+	--},
+	--root_dir = root_dir,
+	--capabilities = require("cmp_nvim_lsp").default_capabilities(),
+	--settings = {
+		--java = {
+			--project = {
+				--referencedLibraries = {
+					--"lib/**/*.jar"
+				--}
+			--}
+		--}
+	--},
+--}
+--
+--jdtls.start_or_attach(config)

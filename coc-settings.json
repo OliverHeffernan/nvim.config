@@ -1,0 +1,15 @@
+{
+	"diagnostic.virtualText": true,
+	"diagnostic.virtualTextCurrentLine": true,
+	"diagnostic.fileType": {
+		"cpp": false,
+		"java": true
+	},
+	"languageserver": {
+		"clangd": {
+			"command": "clangd",
+			"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
+			"fileTypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+		}
+	}
+}
