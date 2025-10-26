@@ -12,7 +12,9 @@ return {
 				'lua',
 				'cpp',
 				'rust',
-				'python'
+				'python',
+                'objc',
+                'bash'
 			}
 		}
 	end,

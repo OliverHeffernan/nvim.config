@@ -10,7 +10,8 @@ end
 vim.g.colors_name = 'iceColdTheme'
 
 -- Define the theme
-vim.api.nvim_set_hl(0, 'Normal', { fg = '#ffffff', bg = '#0C1118' })
+-- vim.api.nvim_set_hl(0, 'Normal', { fg = '#ffffff', bg = '#0C1118' })
+vim.api.nvim_set_hl(0, 'Normal', { fg = '#ffffff' })
 
 vim.api.nvim_set_hl(0, 'Keyword', { fg = '#77f1fc' })
 vim.api.nvim_set_hl(0, 'Type', { fg = '#93D8FC' })

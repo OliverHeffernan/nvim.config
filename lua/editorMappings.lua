@@ -58,25 +58,25 @@ vim.keymap.set('n', '<C-T>x', ':tabclose<CR>', {
 })
 
 -- map jj to exit insert mode
-vim.keymap.set('i', 'jj', '<Esc>', {
-	desc = "Escape out of insert mode into normal mode.",
-	noremap = true,
-	silent = true
-})
+--vim.keymap.set('i', 'jj', '<Esc>', {
+	--desc = "Escape out of insert mode into normal mode.",
+	--noremap = true,
+	--silent = true
+--})
 
 -- map ww to exit insert mode and write the current file
-vim.keymap.set('i', 'ww', '<Esc>:w<CR>', {
-	desc = "Save the current file.",
-	noremap = true,
-	silent = true
-})
+--vim.keymap.set('i', 'ww', '<Esc>:w<CR>', {
+	--desc = "Save the current file.",
+	--noremap = true,
+	--silent = true
+--})
 
 -- map yy to exit insert mode and yank the current line
-vim.keymap.set('i', 'yy', '<Esc>yy', {
-	desc = "Yank the current line when in insert mode.",
-	noremap = true,
-	silent = true
-})
+--vim.keymap.set('i', 'yy', '<Esc>yy', {
+	--desc = "Yank the current line when in insert mode.",
+	--noremap = true,
+	--silent = true
+--})
 
 vim.keymap.set('n', '<leader>d',
 	function()

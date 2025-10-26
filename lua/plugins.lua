@@ -14,9 +14,12 @@ vim.opt.rtp:prepend(lazypath)
 
 require("lazy").setup({
 	spec = {
-		{ import = "plugins" },
+		{ import = "pluginsLazy" },
 	},
-	checker = { enabled = true },
+	checker = {
+		enabled = true,
+		notify = false,
+	},
 })
 
 vim.cmd('autocmd BufRead,BufNewFile *.pde setlocal filetype=java');
