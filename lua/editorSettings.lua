@@ -8,11 +8,14 @@ vim.o.number = true
 vim.o.relativenumber = true
 
 -- 4 spaces when tab key is pressed
-vim.o.expandtab = true
+vim.o.expandtab = false
 vim.o.smartindent = true
 vim.o.softtabstop = 4
 vim.o.tabstop = 4
 vim.o.shiftwidth = 4
+vim.o.wrap = true
+vim.o.linebreak = true
+vim.o.breakindent = true
 --vim.cmd('set tabstop=4')
 
 -- indent width set to 4
@@ -32,5 +35,4 @@ vim.cmd('set cursorline')
 
 vim.g.vim_vue_plugin_load_full_syntax = 1
 vim.cmd [[ autocmd FileType vue setlocal indentexpr= ]]
-
 

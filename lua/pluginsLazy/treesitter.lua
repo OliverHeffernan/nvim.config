@@ -14,7 +14,8 @@ return {
 				'rust',
 				'python',
                 'objc',
-                'bash'
+                'bash',
+				'go'
 			}
 		}
 	end,
