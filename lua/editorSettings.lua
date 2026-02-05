@@ -36,3 +36,5 @@ vim.cmd('set cursorline')
 vim.g.vim_vue_plugin_load_full_syntax = 1
 vim.cmd [[ autocmd FileType vue setlocal indentexpr= ]]
 
+-- sets the number of lines above and below the cursor when scrolling
+vim.o.scrolloff = 1
