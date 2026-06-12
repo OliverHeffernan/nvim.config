@@ -11,5 +11,6 @@
 			"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
 			"fileTypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
 		}
-	}
+	},
+	"inlayHint.enable": false
 }

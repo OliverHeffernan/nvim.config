@@ -21,7 +21,7 @@ return {
 		end
 		keyset("n", "K", '<CMD>lua _G.show_docs()<CR>', {silent = true})
 		keyset("n", "<C-K>", "<Plug>(coc-float-jump)", {silent = true, desc = "Jump to next float window"})
-		keyset("n", "q", "<Cmd>if coc#float#has_float() | call coc#float#close_all() | endif<CR>", {silent = true})
+		keyset("n", "<leader>q", "<Cmd>if coc#float#has_float() | call coc#float#close_all() | endif<CR>", {silent = true})
 		keyset("n", "<leader>qf", "<Plug>(coc-fix-current)", {silent = true, desc = "Apply current quick fix"})
 
 		-- Highlight the symbol and its references on a CursorHold event(cursor is idle)
