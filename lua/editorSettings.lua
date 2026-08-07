@@ -3,6 +3,20 @@ vim.opt.clipboard = 'unnamedplus'
 
 vim.g.mapleader = " "
 
+-- dotnet global tools (CSharpier, language servers, etc.). Shell PATH entries
+-- containing "~" are not expanded by Neovim's executable lookup.
+local dotnet_tools = vim.fn.expand("~/.dotnet/tools")
+if not vim.env.PATH:find(dotnet_tools, 1, true) then
+	vim.env.PATH = dotnet_tools .. ":" .. vim.env.PATH
+end
+
+-- Homebrew's dotnet lives outside the default macOS apphost search path.
+-- Roslyn is a native apphost, so PATH alone is not enough to select .NET 10.
+local homebrew_dotnet = "/opt/homebrew/opt/dotnet/libexec"
+if vim.fn.isdirectory(homebrew_dotnet) == 1 then
+	vim.env.DOTNET_ROOT = homebrew_dotnet
+end
+
 -- Enable line numbering
 vim.o.number = true
 vim.o.relativenumber = true

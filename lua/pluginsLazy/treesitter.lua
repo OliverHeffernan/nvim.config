@@ -21,6 +21,7 @@ return {
 			"typescript",
 			"javascript",
 			"css",
+			"c_sharp"
 		}
 
 		require("nvim-treesitter").install(parsers):wait(300000)

@@ -56,6 +56,13 @@ vim.keymap.set('n', '<C-T>x', ':tabclose<CR>', {
 	silent = true
 })
 
+-- show the diagnostic message under the cursor
+vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, {
+	desc = "Show diagnostic message",
+	noremap = true,
+	silent = true
+})
+
 vim.keymap.set('n', '<leader>d',
 	function()
 		local d = vim.diagnostic.get_next()
