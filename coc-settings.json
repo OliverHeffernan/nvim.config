@@ -10,7 +10,57 @@
 			"command": "clangd",
 			"rootPatterns": [".ccls", "compile_commands.json", ".git/", ".hg/"],
 			"fileTypes": ["c", "cc", "cpp", "c++", "objc", "objcpp"]
+		},
+		"haskell": {
+			"command": "haskell-language-server-wrapper",
+			"args": [
+				"--lsp"
+			],
+			"rootPatterns": [
+				"*.cabal",
+				"stack.yaml",
+				"cabal.project",
+				"package.yaml",
+				"hie.yaml"
+			],
+			"filetypes": [
+				"hs",
+				"lhs",
+				"haskell",
+				"lhaskell"
+			],
+			"initializationOptions": {
+				"languageServerHaskell": {
+					"hlintOn": true,
+					"completionSnippetsOn": true
+				}
+			}
 		}
 	},
-	"inlayHint.enable": false
+	"inlayHint.enable": false,
+	"java.project.sourcePaths": [
+		"01commonSrc",
+		"02appSrc",
+		"02appTest",
+		"02domainSrc",
+		"02domainTest",
+		"02persistenceSrc",
+		"02persistenceTest",
+		"02recorderSrc",
+		"02recorderTest",
+		"02rendererSrc",
+		"02rendererTest"
+	],
+	"java.project.referencedLibraries": [
+		"junit-*.jar",
+		"apiguardian-api-*.jar",
+		"jspecify-*.jar",
+		"open-test-reporting-tooling-spi-*.jar",
+		"opentest4j-*.jar"
+	],
+	"java.project.resourceFilters": [
+		"node_modules",
+		"\\.git",
+		"module-info\\.java"
+	]
 }
